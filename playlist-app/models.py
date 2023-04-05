@@ -7,20 +7,31 @@ db = SQLAlchemy()
 
 class Playlist(db.Model):
     """Playlist."""
-
-    # ADD THE NECESSARY CODE HERE
-
-
+    __tablename__ = "playlists"
+    
+    id = db.Column(db.Integer, primary_key= True)
+    name = db.Column(db.Text)
+    description = db.Column(db.Text)
+    
 class Song(db.Model):
     """Song."""
 
-    # ADD THE NECESSARY CODE HERE
+    __tablename__= "song"
+    
+    id = db.Column(db.Integer , primary_key = True)
+    title = db.Column (db.text)
+    artist = db.Column(db.text)
 
 
 class PlaylistSong(db.Model):
     """Mapping of a playlist to a song."""
 
-    # ADD THE NECESSARY CODE HERE
+    __tablename__= "playlist_songs"
+    
+    id = db.Column(db.Integer , primary_key = True)
+    playlist_id = db.Column(db.Integer, db.foreign_key('playlists.id', ondelete='cascade'))
+    song_id = db.Column(db.Integer, db.foreign_key('song_id',ondelete='cascade'))
+
 
 
 # DO NOT MODIFY THIS FUNCTION
