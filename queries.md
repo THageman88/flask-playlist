@@ -23,7 +23,7 @@ SELECT * FROM movies WHERE rating='G';
 
 3.  The title and release year of every movie, ordered with the
     oldest movie first.
-    
+SELECT * FROM movies ORDERD BY 
 4.  All information on the 5 longest movies.
 
 5.  A query that returns the columns of `rating` and `total`, tabulating the
